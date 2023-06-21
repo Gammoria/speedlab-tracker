@@ -67,10 +67,11 @@ body{
 
 .bttns{
   margin-bottom: 5%;
+  margin-top: 2%;
 }
 
 .bttn{
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
   width: 150px;
   margin: 0 1%;
@@ -137,6 +138,10 @@ footer {
 
 footer img {
   width: 20px;
+}
+
+.navlogo {
+    float: right;
 }
 
 /*!
