@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-new-test',
   templateUrl: './new-test.component.html',
-  styleUrls: ['../../demo-styling.css']
 })
 
 export class NewTestComponent implements OnInit {

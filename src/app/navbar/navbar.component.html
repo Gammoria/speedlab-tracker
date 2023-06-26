@@ -1,20 +1,13 @@
 <div class="navbar bg-dark navbar-dark">
-    <div class="navbar-expand-sm">
-        <!-- Links -->
-        <ul class="navbar-nav">
-    
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Menu
-            </a>
-            <div class="dropdown-menu">
-            <a class="dropdown-item" [routerLink]="['/']">Home</a>
-            <a class="dropdown-item" [routerLink]="['/new-test']">New Test</a>
-            <a class="dropdown-item" [routerLink]="['/leaderboard']">Leaderboard</a>
-            <a class="dropdown-item" href="#">Personal</a>
-            </div>
-        </li>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['/']">Home</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/new-test']">New Test</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/leaderboard']">Leaderboard</a></li>
+            <li><a class="dropdown-item disabled" href="#">Personal</a></li>
         </ul>
     </div>
     <div class="navlogo">
