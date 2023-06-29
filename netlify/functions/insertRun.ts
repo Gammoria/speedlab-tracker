@@ -7,6 +7,8 @@ export const handler: Handler = withPlanetscale(async (event, context) => {
     } = context;
   
     const {user, client_number, molecule, property, lots, time} = JSON.parse(event.body as string);
+
+    console.log(event.body);
   
     try {
       // Insert the run into the leaderboard table
