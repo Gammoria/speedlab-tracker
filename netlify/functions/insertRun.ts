@@ -5,10 +5,17 @@ export const handler: Handler = withPlanetscale(async (event, context) => {
     const {
       planetscale: { connection },
     } = context;
-  
-    const {user, client_number, molecule, property, lots, time} = JSON.parse(event.body as string);
 
-    console.log(event.body);
+    const { body } = event;
+
+    if (!body) {
+      return {
+        statusCode: 400,
+        body: "Missing body",
+      };
+    }
+  
+    const { user, client_number, molecule, property, lots, time } = JSON.parse(body);
   
     try {
       // Insert the run into the leaderboard table
