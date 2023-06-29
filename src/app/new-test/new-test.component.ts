@@ -18,8 +18,8 @@ export class NewTestComponent implements OnInit {
 
   submitForm(form: any) {
       const runData = {
-        initials: form.initials,
-        client: form.client,
+        user: form.initials,
+        client_number: form.client,
         molecule: form.molecule,
         property: form.property,
         lots: form.lots,

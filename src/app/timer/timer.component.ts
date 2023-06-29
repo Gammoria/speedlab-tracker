@@ -50,10 +50,12 @@ export class TimerComponent implements OnInit {
     clearInterval(this.timerInterval);
     this.running = false;
     this.hr = this.min = this.sec = this.ms = '0' + 0;
+    this.formData.time = this.msTot;
 
     this.http.post<any>('https://speedlabtracker.netlify.app/.netlify/functions/insertRun', this.formData)
       .subscribe({
         next: (response) => {
+          console.log(response);
           console.log('Run submitted successfully');
           // Handle any success actions, such as displaying a success message or navigating to another page
         },
