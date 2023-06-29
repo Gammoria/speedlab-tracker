@@ -19,6 +19,7 @@ export const handler: Handler = withPlanetscale(async (event, context) => {
         property: row.property,
         lots: row.lots,
         time: row.time,
+        reagents_prepared: row.reagents_prepared,
         date: row.date,
         day: row.day,
       };

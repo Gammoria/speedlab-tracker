@@ -589,6 +589,7 @@
           <select type="text" id="property" name="property" [(ngModel)]="form.property" class="form-select" aria-label="Test property">
             <option value="AS">AS</option>
             <option value="RS">RS</option>
+            <option value="AS/RS">AS/RS</option>
             <option value="DIS">DIS</option>
             <option value="LIM">LIM</option>
             <option value="Other">Other</option>
@@ -598,8 +599,14 @@
 
         <div class="form-group">
           <label for="lots">Lots</label>
-          <input type="number" id="lots" name="lots" [(ngModel)]="form.lots" class="form-control" placeholder="1" />
+          <input type="number" id="lots" name="lots" [(ngModel)]="form.lots" class="form-control" placeholder="1"/>
         </div>
+
+        <div class="form-group">
+          <label for="reagents_prepared">Reagents Prepared?</label>
+          <input type="checkbox" id="reagents_prepared" name="reagents_prepared" [(ngModel)]="form.reagents_prepared" class="form-check"/>
+        </div>
+
 
         <div class="form-group">
         <div style="display: flex; margin-top: 10px;">

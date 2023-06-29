@@ -24,6 +24,11 @@ export class NewTestComponent implements OnInit {
         property: form.property,
         lots: form.lots,
         time: 0,
+        reagents_prepared: form.reagents_prepared,
+      }
+
+      if (runData.lots == undefined) {
+        runData.lots = 1;
       }
 
       this.router.navigate(['/timer'], {state: {formData: runData}});
