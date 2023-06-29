@@ -51,6 +51,15 @@ export class TimerComponent implements OnInit {
     this.running = false;
     this.hr = this.min = this.sec = this.ms = '0' + 0;
     this.formData.time = this.msTot;
+
+    const currentDate = new Date();
+    const day = currentDate.getDate();
+    const month = currentDate.toLocaleString('default', { month: 'short' }).toUpperCase();
+    const year = currentDate.getFullYear();
+    
+    const formattedDate = `${day}${month}${year}`;
+    
+    this.formData.date = formattedDate;
   
     this.http.post<any>('https://speedlabtracker.netlify.app/.netlify/functions/insertRun', this.formData)
     .subscribe({

@@ -19,6 +19,7 @@ export const handler: Handler = withPlanetscale(async (event, context) => {
         property: row.property,
         lots: row.lots,
         time: row.time,
+        date: row.date,
       };
     });
   
