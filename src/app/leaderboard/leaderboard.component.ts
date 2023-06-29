@@ -16,7 +16,7 @@ export class LeaderboardComponent implements OnInit {
   }
 
   fetchLeaderboardData(): void {
-    this.http.get<any[]>('https://speedlabtracker.netlify.app/.netlify/functions/insertRun')
+    this.http.get<any[]>('https://speedlabtracker.netlify.app/.netlify/functions/leaderboard')
       .subscribe({
         next: (data) => {
           this.leaderboardData = data;
