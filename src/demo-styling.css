@@ -11,6 +11,48 @@
   --bttm-left-blur-2: #e46b73;
 }
 
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+  
+  .leaderboard-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .leaderboard-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+.stopwatch{
+    position: relative;
+    width: 92%;
+    background: #ffffff;
+    left: 4%;
+    padding: 15px 20px 30px;
+    color: #0381bb;
+    text-align: center;
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    box-shadow: 0 0 20px rgba(0,139,253,0.25);
+}
+
+.form-data {
+    color: #000000;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
 html {
     background: var(--color-bg);
     font-family: var(--main-family);
@@ -67,7 +109,7 @@ body{
 
 .bttns{
   margin-bottom: 5%;
-  margin-top: 2%;
+  margin-top: 5%;
 }
 
 .bttn{

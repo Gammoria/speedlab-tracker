@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NewTestRoutingModule } from './new-test-routing.module';
 import { NewTestComponent } from './new-test.component';
@@ -14,6 +15,8 @@ import { NewTestComponent } from './new-test.component';
     RouterModule,
     NewTestRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
   ]
 })
 export class NewTestModule { }

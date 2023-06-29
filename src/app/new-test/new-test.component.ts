@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-test',
@@ -8,23 +10,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class NewTestComponent implements OnInit {
 
-  form: FormGroup;
+  form: any = {};
 
-  constructor(private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group({
-      client: ['', Validators.required],
-      molecule: ['', Validators.required],
-      numberOfLots: ['', [Validators.required, Validators.min(1)]]
-    });
-   }
+  constructor(private http: HttpClient, private router: Router) {
+    
+  }
 
-   submitForm() {
-    if (this.form.valid) {
-      // Handle form submission logic here
-      console.log('Form submitted');
-    } else {
-      // Handle invalid form submission, display error messages, etc.
-    }
+  submitForm(form: any) {
+      const runData = {
+        initials: form.initials,
+        client: form.client,
+        molecule: form.molecule,
+        property: form.property,
+        lots: form.lots,
+      }
+
+      this.router.navigate(['/timer'], {state: {formData: runData}});
+
   }
 
   ngOnInit(): void {

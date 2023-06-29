@@ -1,4 +1,24 @@
 <div class="row justify-content-sm-center">
-    <h2 class="header"> Test Times </h2>
+    <h2 class="header">Leaderboard</h2>
 </div>
 
+<table class="leaderboard-table">
+    <thead>
+      <tr>
+        <th>Initials</th>
+        <th>Client</th>
+        <th>Molecule</th>
+        <th>Lots</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of leaderboardData">
+        <td>{{ entry.initials }}</td>
+        <td>{{ entry.client }}</td>
+        <td>{{ entry.molecule }}</td>
+        <td>{{ entry.lots }}</td>
+        <td>{{ entry.time }}</td>
+      </tr>
+    </tbody>
+  </table>

@@ -4,10 +4,16 @@
 
   <div class="justify-content-sm-center">
     <div class="col-md-4">
-      <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <form (ngSubmit)="submitForm(form)">
+
+        <div class="form-group">
+          <label for="initials">Initials</label>
+          <input type="text" id="initials" name="initials" [(ngModel)]="form.initials" class="form-control" />
+        </div>
+
         <div class="form-group">
         <label for="client">Client</label>
-        <select class="form-select" aria-label="Client">
+        <select type="text" id="client" name="client" [(ngModel)]="form.client" class="form-select" aria-label="Client">
             <option value="0002">0002</option>
             <option value="0109">0109</option>
             <option value="0147">0147</option>
@@ -21,7 +27,7 @@
 
         <div class="form-group">
           <label for="molecule" class="form-label">Molecule</label>
-          <input class="form-control" list="moleculeList" id="molecule" placeholder="Select a molecule..."/>
+          <input type="text" id="molecule" name="molecule" [(ngModel)]="form.molecule" class="form-control" list="moleculeList" id="molecule" placeholder="Select a molecule..."/>
           <datalist id="moleculeList">
             <option value="0002 1% B12 Trituration">
               <option value="0002 Chewable Vitamin / Project Orange">
@@ -580,7 +586,7 @@
 
         <div class="form-group">
           <label for="property">Property</label>
-          <select class="form-select" aria-label="Test property">
+          <select type="text" id="property" name="property" [(ngModel)]="form.property" class="form-select" aria-label="Test property">
             <option value="AS">AS</option>
             <option value="RS">RS</option>
             <option value="DIS">DIS</option>
@@ -592,17 +598,17 @@
 
         <div class="form-group">
           <label for="lots">Lots</label>
-          <input class="form-control" placeholder="1" />
+          <input type="number" id="lots" name="lots" [(ngModel)]="form.lots" class="form-control" placeholder="1" />
         </div>
 
         <div class="form-group">
-      <div style="display: flex; margin-top: 10px;">
+        <div style="display: flex; margin-top: 10px;">
          <button
             type="submit"
             class="btn btn-primary"
             style="margin-left: auto; width: 30%;"
         >
-               Start (NYI)
+              Next
          </button>
        </div>
        </div>

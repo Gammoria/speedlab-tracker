@@ -1,0 +1,22 @@
+<div class="row justify-content-sm-center">
+    <h2 class="header">Timer</h2>
+</div>
+
+<div class="stopwatch">
+    <div class="form-data">
+      <p>{{ formData.initials }} -- {{formData.lots}} lots of {{ formData.molecule }} -- {{ formData.property }}</p>
+    </div>
+  
+    <span>{{ hr }} :</span>
+    <span>{{ min }} :</span>
+    <span>{{ sec }} :</span>
+    <span>{{ ms }}</span>
+  
+    <div class="bttns">
+      <button id="startTimer" class="bttn btn-primary" (click)="start()">
+        <i *ngIf="!running" class="fa fa-play"></i>
+        <i *ngIf="running" class="fa fa-pause"></i>
+      </button><br><br>
+      <button id="resetTimer" class="bttn btn-primary" *ngIf="!running && (hr > 0 || min > 0 || sec > 0 || ms > 0)" (click)="finish()">Finish</button>
+    </div>
+  </div>
