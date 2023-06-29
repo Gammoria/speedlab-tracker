@@ -49,22 +49,22 @@ export class TimerComponent implements OnInit {
   finish(): void {
     clearInterval(this.timerInterval);
     this.running = false;
-    this.formData.time = this.msTot;
     this.hr = this.min = this.sec = this.ms = '0' + 0;
-    
-
-    this.http.post<any>('https://speedlabtracker.netlify.app/.netlify/functions/insertRun', this.formData)
-      .subscribe({
-        next: (response) => {
-          console.log(response);
-          console.log('Run submitted successfully');
-          // Handle any success actions, such as displaying a success message or navigating to another page
-        },
-        error: (error) => {
-          console.error('Error submitting run:', error);
-          // Handle any error actions, such as displaying an error message or logging the error
-        }
-      });
+  
+    this.formData.time = this.msTot;
+  
+    this.http.post<any>('https://speedlabtracker.netlify.app/.netlify/functions/insertRun', JSON.stringify(this.formData))
+    .subscribe({
+      next: (response: any) => {
+        console.log(response);
+        console.log('Run submitted successfully');
+        // Handle any success actions, such as displaying a success message or navigating to another page
+      },
+      error: (error: any) => {
+        console.error('Error submitting run:', error);
+        // Handle any error actions, such as displaying an error message or logging the error
+      }
+    });
   }
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { }

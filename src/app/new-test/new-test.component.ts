@@ -23,6 +23,7 @@ export class NewTestComponent implements OnInit {
         molecule: form.molecule,
         property: form.property,
         lots: form.lots,
+        time: null,
       }
 
       this.router.navigate(['/timer'], {state: {formData: runData}});
