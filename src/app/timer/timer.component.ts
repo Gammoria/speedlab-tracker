@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-timer',
@@ -53,13 +54,17 @@ export class TimerComponent implements OnInit {
     this.formData.time = this.msTot;
 
     const currentDate = new Date();
+    const dayOfWeek = currentDate.getDay();
+    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const day = currentDate.getDate();
     const month = currentDate.toLocaleString('default', { month: 'short' }).toUpperCase();
     const year = currentDate.getFullYear();
     
     const formattedDate = `${day}${month}${year}`;
-    
     this.formData.date = formattedDate;
+    this.formData.day = dayNames[dayOfWeek];
+
+    console.log(this.formData);
   
     this.http.post<any>('https://speedlabtracker.netlify.app/.netlify/functions/insertRun', this.formData)
     .subscribe({
@@ -73,9 +78,12 @@ export class TimerComponent implements OnInit {
         // Handle any error actions, such as displaying an error message or logging the error
       }
     });
+
+    this.router.navigate(['/new-test']);
+
   }
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     if (history.state && history.state.formData) {

@@ -15,13 +15,13 @@ export const handler: Handler = withPlanetscale(async (event, context) => {
       };
     }
   
-    const { user, client_number, molecule, property, lots, time, date } = JSON.parse(body);
+    const { user, client_number, molecule, property, lots, time, date, day } = JSON.parse(body);
   
     try {
       // Insert the run into the leaderboard table
       await connection.execute(
-        "INSERT INTO leaderboard (user, client_number, molecule, property, lots, time, date) VALUES (?, ?, ?, ?, ?, ?, ?)",
-        [user, client_number, molecule, property, lots, time, date]
+        "INSERT INTO leaderboard (user, client_number, molecule, property, lots, time, date, day) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+        [user, client_number, molecule, property, lots, time, date, day]
       );
   
       return {
