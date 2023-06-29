@@ -15,6 +15,7 @@ export class NewTestComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) {
     
   }
+  
 
   submitForm(form: any) {
       const runData = {

@@ -22,7 +22,7 @@
         <td>{{ entry.molecule }}</td>
         <td>{{ entry.lots }}</td>
         <td>{{ convertToTimeFormat(entry.time) }}</td>
-        <td><input type="checkbox" checked="{{ entry.reagents_prepared }}" /></td>
+        <td>{{ entry.reagents_prepared ? 'Yes' : 'No' }}</td>
         <td>{{ entry.date }}</td>
         <td>{{ entry.day }}</td>
       </tr>
